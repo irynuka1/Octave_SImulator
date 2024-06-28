@@ -1,0 +1,77 @@
+Coitu Sebastian-Teodor 314CA
+
+	Pentru a realiza task-urile cerute voi folosi un vector de matrici în
+care voi stoca toate matricele citite sau rezultate din diferite operații și
+încă o matrice separată în care voi memora dimensiunile fiecărei matrice din
+vector. Ambele structuri sunt alocate dinamic. Citirea comenzilor primite de la
+tastatură se va face cu ajutorul variabilei "input".
+	Input = "Q", atunci voi apela funcția "mem_free" care îmi eliberează
+toată memoria folosită de vector și de matricea de dimensiuni, apoi iese din
+"while" pentru a finaliza programul.
+	Input = "L", atunci înainte să adăugăm o nouă matrice în memorie, voi
+verifica dacă există destulă memorie alocată pentru aceasta ("maxsize" repre-
+zintă numărul maxim de matrici ce pot fi adăugate în memorie, iar "arrsize" re-
+prezintă numărul curent de matrici din memorie). După verifcare se apelează
+funcția de adăugare în memorie a unei matrice citite și se incrementează
+"arrsize".
+	Input = "D", atunci prin intermediul funcției "D" se vor afișa dimen-
+siunile matricei cu indexul respectiv (dacă există).
+	Input = "P", atunci cu ajutorul funcției "P" se va afișa matricea cu
+indexul respectiv (dacă există).
+	Input = "C", atunci în funcția "C" se folosește o matrice auxiliară
+pentru memorarea liniilor și coloanelor dorite din matricea selectată (dacă
+există). Se actualizează matricea din vectorul de matrici cu noile valori și
+se modifică dimensiunile ei in matricea de dimensiuni, apoi se eliberează me-
+moria ocupată de matricea auxiliară.
+	Input = "M", atunci se apelează funcția "M_check" care verifică condi-
+țiile în care două matrice pot fi înmulțite. Dacă acestea sunt satisfăcute, a-
+tunci se redimensionează memoria (dacă este nevoie) și se apelează funcția "M",
+care adaugă pe ultima pozție din vector noua matrice rezultată în urma înmul-
+țirii. La final se incrementează "arrsize".
+	Input = "O", atunci se va realiza sortarea matricelor stocate în vector
+prin intermediul funcției "O" care are la bază selection sort. Funcția
+"elem_sum" face suma elementelor unei matrice.
+	Input = "T", atunci se apelează funcția "T" în care se va face transpu-
+sa matricei cu indexul dat (dacă există). Transpusa va fi pusă într-o matrice
+auxiliară "new_arr" până la finalizarea modificărilor necesare pentru matricea
+principală, apoi elementele vor fi copiate înapoi în principală și memoria pen-
+tru matricea auxiliară va fi eliberată.
+	Input = "R", atunci prin intermediul subprogramelor "R", "power_2" și
+"arr_multiplication" se va realiza înmulțirea în timp logaritmic a două matrice
+cu indecșii dați (dacă aceștia există). Dacă puterea este 0, atunci matricea
+rezultată va fi matricea identitate. Dacă puterea este 1, atunci nu se va face
+nicio operație, întrucât nu se modifică matricea. Dacă puterea este mai mare
+decât 1, atunci folosim o matrice identitate auxiliară pentru realizarea pute-
+rilor impare. Când puterea este pară, atunci doar se ridică matricea principală
+la pătrat, iar când este impară, aceasta se înmulțește cu matricea auxiliară. 
+La final se copiază elementele din matricea auxiliară în cea principală și se
+eliberează memoria folosită.
+	Input = "F", atunci se verifică dacă indexul matricei cerute există.
+Dacă da, atunci se eliberează memoria ocupată de matricea curentă și toate ma-
+tricele din dreapta ei se mută cu o poziție spre stânga. Același lucru se face
+și pentru matricea de dimensiuni, apoi se decrementează "arrsize". La final se
+verifică dacă se poate realiza realocarea memoriei, lucru posibil doar atunci
+când numărul de matrici din memorie este mai mic decât jumătatea numărului ma-
+xim de matrici ce pot fi adăugate în memorie.
+	Input = "S", atunci se verifică prin intermediul subprogramului
+"S_check" dacă sunt îndeplinite toate condițiile pentru aplicarea algoritmului
+lui Strassen. Dacă da, atunci se realocă memorie pentru noua matrice (dacă este
+nevoie) și se intră în funcția "S", unde se alocă memorie pentru matricele cu
+care se va lucra. În matricea "A" se copiază elementele matricei cu primul in-
+dex dat din vector, iar în matricea "B" se copiază elementele matricei cu cel
+de al doilea index dat din vector. Matricea "C" va fi matricea rezultat. La în-
+trarea în funcția "S_multi", dacă dimensiunea matricelor este 1, atunci se știe
+că acestea nu mai pot fi împarțite în blocuri și se fac operațiile aferente. În
+caz contrar, se alocă memorie pentru următoarele matrice blocuri și pentru ma-
+tricele "T1" și "T2" care vor ajuta la realizarea operațiilor. Se copiază ele-
+mentele aferente fiecărei matrice bloc alocată mai devreme prin subprogramul
+"arr_split", apoi se alocă memorie pentru cele 7 matrice rezultate în urma ope-
+rațiilor. Operațiile se realizează cu ajutorul funcțiilor "arr_add" și
+"arr_sub" care adună, respectiv scad două matrice. După efectuarea operațiilor,
+subprogramul "arr_combin" combina toate cele 7 matrice rezultate într-una sin-
+gură (adică "C") și se eliberează memoria alocată mai devreme. Matricea rezul-
+tată după finalizarea subprogramului "S_multi" va fi adăugată pe ultima poziție
+din vectorul de matrici și se va incrementa "arrsize". 
+	Când inputul este diferit de cele de mai sus, se va afișa mesajul co-
+respunzător fără a se ieși din loop.
+	
